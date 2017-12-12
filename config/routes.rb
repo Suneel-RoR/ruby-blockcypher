@@ -3,4 +3,7 @@ Rails.application.routes.draw do
   resources :todos do
     resources :items
   end
+
+  resources :modules
+  root :to => 'todos#index'
 end

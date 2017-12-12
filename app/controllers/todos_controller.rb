@@ -3,8 +3,9 @@ class TodosController < ApplicationController
 
   # GET /todos
   def index
-    @todos = Todo.all
-    json_response(@todos)
+    json_response(
+      params[:type].eql?('cancel') ? Todo.cancel_orders_json : params[:type].eql?('moved') ? Todo.swap_orders_json : params[:type].eql?('matrix') ? Todo.matrix_json : Todo.orders_json  
+    )
   end
 
   # GET /todos/:id
