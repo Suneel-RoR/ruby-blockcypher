@@ -1,5 +1,0 @@
-require 'blockcypher/api'
-require 'bitcoin'
-require 'json'
-require 'uri'
-require 'net/http'
